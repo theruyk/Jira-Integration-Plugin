@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jira Integration Configuration</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'testy_jira_integration/styles.css' %}">
+</head>
+<body>
+    <h1>Настройка интеграции с Jira</h1>
+    {% if success %}
+        <p>Конфигурация успешно сохранена!</p>
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        <label for="jira_url">Jira URL:</label>
+        <input type="url" id="jira_url" name="jira_url" required><br>
+        <label for="jira_username">Jira Username:</label>
+        <input type="text" id="jira_username" name="jira_username" required><br>
+        <label for="jira_api_token">Jira API Token:</label>
+        <input type="password" id="jira_api_token" name="jira_api_token" required><br>
+        <label for="jira_custom_field_id">Jira Custom Field ID:</label>
+        <input type="text" id="jira_custom_field_id" name="jira_custom_field_id" required><br>
+        <button type="submit">Сохранить</button>
+    </form>
+</body>
+</html>

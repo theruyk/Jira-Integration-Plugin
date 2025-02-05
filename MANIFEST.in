@@ -1,0 +1,3 @@
+include README.md
+recursive-include testy_jira_integration/templates *
+recursive-include testy_jira_integration/static *
